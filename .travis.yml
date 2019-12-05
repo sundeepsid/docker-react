@@ -4,6 +4,6 @@ services:
 
 before_install:
    - docker build -t sundeepsid/docker-react -f Dockerfile.dev .
-   
+
 script:
-   - docker run sundeepsid/docker-react npm run test -- --coverage
+   - docker run -e CI=true sundeepsid/docker-react npm run test
